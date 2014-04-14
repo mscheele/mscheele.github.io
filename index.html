@@ -1,20 +1,20 @@
-!DOCTYPE html> <!--Thank you Ray (https://github.com/planetoftheweb) -->
-<html lang="de"> <!--done-->
-<head>
-	<meta charset="utf-8" />
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://mscheele.de/uv/index.html -->
+<html lang="de" class="ui-mobile"><!--done--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="http://mscheele.de/uv/index.html">--><base href=".">
+	<meta charset="utf-8">
 	<title>Eincremen</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
-<link rel="apple-touch-icon" href="apple-touch-icon-iphone.png" /> 
-<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-ipad.png" /> 
-<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-iphone4.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-ipad3.png" />
-<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">
+<link rel="apple-touch-icon" href="http://mscheele.de/uv/apple-touch-icon-iphone.png"> 
+<link rel="apple-touch-icon" sizes="72x72" href="http://mscheele.de/uv/apple-touch-icon-ipad.png"> 
+<link rel="apple-touch-icon" sizes="114x114" href="http://mscheele.de/uv/apple-touch-icon-iphone4.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://mscheele.de/uv/apple-touch-icon-ipad3.png">
+<script src="./Eincremen_files/jquery-1.8.2.min.js"></script><style type="text/css"></style>
+<script src="./Eincremen_files/jquery.mobile-1.3.0.min.js"></script>
+ <script src="./Eincremen_files/jquery.min.js"></script>
 
 	<style>
     #home {
@@ -49,24 +49,23 @@
 	</style>
 </head>
 
-<body>
-<div id="home" data-role="page">
-  <article data-role="content">
-    <h1>UV Index Wert Mettmann - eincremen oder nicht?</h1>  
-    <p>Eine WebApp von <a href="http://www.mscheele.de">Matthias Scheele</a>.</p>
+<body class="ui-mobile-viewport ui-overlay-c">
+<div id="home" data-role="page" data-url="home" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 896px;">
+  <article data-role="content" class="ui-content" role="main">
+    <h1>UV Wert Mettmann - eincremen oder nicht?</h1>  
+    <p>Eine WebApp von <a href="http://www.mscheele.de/" class="ui-link">Matthias Scheele</a>.</p>
     	<div class="container">
-<a href="#uveon" data-role="button"
-		  data-icon="arrow-r">Eincremen oder nicht?</a>
+<a href="http://mscheele.de/uv/index.html#uveon" data-role="button" data-icon="arrow-r" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-left ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Eincremen oder nicht?</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
     	</div>
   </article>
 
 </div>
 
 
-<div data-role="page" id="uveon">
+<div data-role="page" id="uveon" data-url="uveon">
 		<header data-role="header">
 			<h1>Eincremen?</h1>
-			<a href="#home" data-icon="arrow-l" data-iconpos="notext">Home</a>
+			<a href="http://mscheele.de/uv/index.html#home" data-icon="arrow-l" data-iconpos="notext">Home</a>
 		</header>
 		 <div> 
 <script>
@@ -88,12 +87,160 @@ $("#mediaContainer").append("<h1>Wetterdaten werden aktualisiert - bitte erneut 
 }
 else
 {
-$("#mediaContainer").append("<h1>Eincremen nicht nÃ¶tig - UV Index lautet: </h1><h1>"+uv+"</h1")
+$("#mediaContainer").append("<h1>Eincremen nicht nötig - UV Index lautet: </h1><h1>"+uv+"</h1")
 }}
   });
 });
 </script>
  </div>
 
-</body>
-</html>
+<div id="mediaContainer">
+<h1>Eincremen bitte - UV Index lautet: </h1><h1>6.0</h1></div></div>
+
+<div data-role="page" id="heute" data-url="heute">
+		<header data-role="header">
+			<h1>Notdienst heute</h1>
+			<a href="http://mscheele.de/uv/index.html#home" data-icon="arrow-l" data-iconpos="notext">Home</a>
+		</header>
+		 <div> 
+		 <script type="text/javascript">
+<!--
+var currentTime2 = new Date()
+var month2 = currentTime2.getMonth() + 1
+var day2 = currentTime2.getDate() 
+var year2 = currentTime2.getFullYear()
+var apodate2 = (day2 + "." + month2 + "." + year2)
+
+
+// jQuery selector to match exact text inside an element
+// :containsExact()     - case insensitive
+// :containsExactCase() - case sensitive
+$.extend($.expr[':'],{
+containsExact: function(a,i,m){
+  return $.trim($(a).text().toLowerCase()) === m[3].toLowerCase();
+ },
+ containsExactCase: function(a,i,m){
+  return $.trim($(a).text()) === m[3];
+ }
+});
+    
+   $(document).ready(function()
+   {
+
+        // ganze XML-datei einlesen und in variable 'XMLmediaArray2' speichern
+        $.get("not.xml", function(XMLmediaArray2){
+ 
+ 
+        // suche nach jedem (each) 'notdienst' abschnitt 
+        $(XMLmediaArray2).
+    find("notdienst datum:containsExact('" + apodate2 + "')").
+    closest("notdienst").each(function() {
+ 
+ 
+        // gefundenen abschnitt in variable zwischenspeichern (cachen)
+        var $myNotdienst2 = $(this);
+ 
+    
+        // einzelne werte auslesen und zwischenspeichern
+        // attribute: funktion 'attr()'
+        // tags: nach dem tag suchen & text auslesen
+        var plz2 = $myNotdienst2.find("plz").text();
+        var apotheke2 = $myNotdienst2.find("apotheke").text();
+        var telefon2 = $myNotdienst2.find("telefon").text();
+        var ort2 = $myNotdienst2.find("ort").text();
+ 
+ 
+        // daten von jeden treffer ausgeben
+        // unformatiert...nur zum zeigen!
+        // append = inhalt/string dem kontainer anhängen
+        $("#mediaContainer2").append(
+           "<h3>"+apodate2+"</h3><h3>"+apotheke2+"</h3><p>Telefon:"+telefon2+" / "+plz2+" : "+ort2+"</p>");
+        });
+ 
+     });
+ 
+   });                
+   </script>
+ </div>
+
+<div id="mediaContainer2">
+</div></div>
+
+
+
+<div data-role="page" id="morgen" data-url="morgen">
+		<header data-role="header">
+			<h1>Notdienst morgen</h1>
+			<a href="http://mscheele.de/uv/index.html#home" data-icon="arrow-l" data-iconpos="notext">Home</a>
+		</header>
+		 <div> 
+		 <script type="text/javascript">
+<!--
+var currentTime3 = new Date()
+var month3 = currentTime3.getMonth() + 1
+var day3 = currentTime3.getDate() + 1
+var year3 = currentTime3.getFullYear()
+var apodate3 = (day3 + "." + month3 + "." + year3)
+
+
+// jQuery selector to match exact text inside an element
+// :containsExact()     - case insensitive
+// :containsExactCase() - case sensitive
+$.extend($.expr[':'],{
+containsExact: function(a,i,m){
+  return $.trim($(a).text().toLowerCase()) === m[3].toLowerCase();
+ },
+ containsExactCase: function(a,i,m){
+  return $.trim($(a).text()) === m[3];
+ }
+});
+    
+   $(document).ready(function()
+   {
+
+        // ganze XML-datei einlesen und in variable 'XMLmediaArray3' speichern
+        $.get("not.xml", function(XMLmediaArray3){
+ 
+ 
+        // suche nach jedem (each) 'notdienst' abschnitt 
+        $(XMLmediaArray3).
+    find("notdienst datum:containsExact('" + apodate3 + "')").
+    closest("notdienst").each(function() {
+ 
+ 
+        // gefundenen abschnitt in variable zwischenspeichern (cachen)
+        var $myNotdienst3 = $(this);
+ 
+    
+        // einzelne werte auslesen und zwischenspeichern
+        // attribute: funktion 'attr()'
+        // tags: nach dem tag suchen & text auslesen
+        var plz3 = $myNotdienst3.find("plz").text();
+        var apotheke3 = $myNotdienst3.find("apotheke").text();
+        var telefon3 = $myNotdienst3.find("telefon").text();
+        var ort3 = $myNotdienst3.find("ort").text();
+ 
+ 
+        // daten von jeden treffer ausgeben
+        // unformatiert...nur zum zeigen!
+        // append = inhalt/string dem kontainer anhängen
+        $("#mediaContainer3").append(
+           "<h3>"+apodate3+"</h3><h3>"+apotheke3+"</h3><p>Telefon:"+telefon3+" / "+plz3+" : "+ort3+"</p>");
+        });
+ 
+     });
+ 
+   });                
+   </script>
+ </div>
+
+<div id="mediaContainer3">
+</div></div>
+
+
+
+
+
+
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span><h1>loading</h1></div></body></html>
