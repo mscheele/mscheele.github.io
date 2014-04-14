@@ -1,74 +1,99 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Mscheele.github.io by mscheele</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+!DOCTYPE html> <!--Thank you Ray (https://github.com/planetoftheweb) -->
+<html lang="de"> <!--done-->
+<head>
+	<meta charset="utf-8" />
+	<title>Eincremen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-  </head>
-  <body>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+<link rel="apple-touch-icon" href="apple-touch-icon-iphone.png" /> 
+<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-ipad.png" /> 
+<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-iphone4.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-ipad3.png" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 
-      <header>
-        <h1>Mscheele.github.io</h1>
-        <p></p>
-      </header>
+	<style>
+    #home {
+      background: gainsboro; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      filter:alpha(opacity=50);
+    }
 
-      <div id="banner">
-        <span id="logo"></span>
+   
+		#home article h1, #home article p {
+			margin: 0;
+			padding:2px;
+		}
+		
+		#home article h1 {
+			padding-bottom: 2px;
+			color: black;
+		}
 
-        <a href="https://github.com/mscheele" class="button fork"><strong>View On GitHub</strong></a>
-      </div><!-- end banner -->
+		img.fullscreen {
+			max-height: 100%;
+			max-width: 100%;
+		}
+		img.intext
+		{
+			border-radius: 10px;
+			border=5;
+		}
+	</style>
+</head>
 
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<body>
+<div id="home" data-role="page">
+  <article data-role="content">
+    <h1>UV Index Wert Mettmann - eincremen oder nicht?</h1>  
+    <p>Eine WebApp von <a href="http://www.mscheele.de">Matthias Scheele</a>.</p>
+    	<div class="container">
+<a href="#uveon" data-role="button"
+		  data-icon="arrow-r">Eincremen oder nicht?</a>
+    	</div>
+  </article>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+</div>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<div data-role="page" id="uveon">
+		<header data-role="header">
+			<h1>Eincremen?</h1>
+			<a href="#home" data-icon="arrow-l" data-iconpos="notext">Home</a>
+		</header>
+		 <div> 
+<script>
+jQuery(document).ready(function($) {
+  $.ajax({
+  url : "http://api.wunderground.com/api/e6b00811096432c9/geolookup/conditions/q/Germany/Mettmann.json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var uv = parsed_json['current_observation']['UV'];
+  var link = ('<p><a href=".">Seite neu laden</a></p>')
+if (uv >= 4)
+{
+$("#mediaContainer").append("<h1>Eincremen bitte - UV Index lautet: </h1><h1>"+uv+"</h1")
+}
+else if (uv == -1)
+{
+$("#mediaContainer").append("<h1>Wetterdaten werden aktualisiert - bitte erneut laden</h1><h1>"+uv+""+link+"</h1")
+}
+else
+{
+$("#mediaContainer").append("<h1>Eincremen nicht nÃ¶tig - UV Index lautet: </h1><h1>"+uv+"</h1")
+}}
+  });
+});
+</script>
+ </div>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+</body>
 </html>
